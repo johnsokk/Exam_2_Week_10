@@ -88,6 +88,7 @@ def test_draw_a_picture():
 ###############################################################################
 
 
+
 def is_prime(n):
     """
     What comes in:  An integer n >= 1.
@@ -129,7 +130,17 @@ def is_prime(n):
 #
 def draw_a_picture(point, n, color, window):
 
-    pass
+    circle = rg.Circle(point, 100)
+    circle.attach_to(window)
+    rectangle = rg.Rectangle(rg.Point(point.x + 80, point.y + 40), rg.Point(point.x - 80, point.y - 40))
+    rectangle.attach_to(window)
+    for k in range(n):
+        line = rg.Line(point, rg.Point(point.x + 80 - k*(160/(n-1)), point.y - 40))
+        if is_prime(n):
+            line.color = 'orange'
+        line.color = color
+        line.attach_to(window)
+    window.render()
 
 
 main()
