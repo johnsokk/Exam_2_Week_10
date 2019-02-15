@@ -89,7 +89,7 @@ class Bank(object):
             return 'Error'
         return self.balance
     # ---------------------------------------------------------------------
-    # TODO: 4. Implement and test the withdraw method
+    # DONE: 4. Implement and test the withdraw method
     #     Implement your own test code, before you write your method
     #     Insert your test code for withdraw, where indicated
     #     Scroll down near the bottom of this screen
@@ -149,26 +149,23 @@ def run_test_init():
     # ---------------------------------------------------------------------
 
 # ---------------------------------------------------------------------
-# TODO: 3. Implement your test for the withdraw method below
+# DONE: 3. Implement your test for the withdraw method below
 # ---------------------------------------------------------------------
 def run_test_withdrawal():
     # Test 1:  Contents fit in the Box easily.
     b1 = Bank('Brackin', 10000, 'A3')
     print('expected amount', 2000)
-    print(b1.withdraw(8000))
+    print('actual amount', b1.withdraw(8000))
 
     # Test 2:  Contents fit in the Box easily.
     b2 = Bank('Lovelace', 10.15, 'A3')
     print('expected amount', 'Error')
-    print(b2.withdraw(50.25))
+    print('actual amount', b2.withdraw(50.25))
 
     # Test 3:  Contents fit in the Box easily.
     b3 = Bank('Kaia', 160, 'A3')
     print('expected amount', 140)
-    print(b3.withdraw(20))
-
-
-
+    print('actual amount', b3.withdraw(20))
 
 
 def print_failure_message():
